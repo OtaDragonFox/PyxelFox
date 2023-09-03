@@ -2,6 +2,14 @@
 
 struct vec2 
 {
+	float x;
+	float y;
+
+	vec2(float xVal = 0, float yVal = 0)
+	{
+		x = xVal;
+		y = yVal;
+	}
 
 };
 
@@ -17,7 +25,7 @@ struct vec4
 	float z;
 	float w;
 
-	vec4(float xVal, float yVal, float zVal, float wVal) {
+	vec4(float xVal = 0, float yVal = 0, float zVal = 0, float wVal = 0) {
 		x = xVal;
 		y = yVal;
 		z = zVal;
@@ -47,8 +55,6 @@ struct ivec4
 {
 
 };
-
-
 
 struct mat2
 {

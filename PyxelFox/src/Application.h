@@ -15,12 +15,20 @@ public:
 	void applicationTick();
 
 
+
+	static Application m_application;
+
+
+
 	static Application& get()
 	{
 		return m_application;
 	}
 
-	static Application m_application;
+	static applicationWindow* getWindow()
+	{
+		return get().window;
+	}
 
 private:
 	Application() {};
@@ -32,3 +40,4 @@ private:
 
 
 #define CORE Application::get()
+#define WINDOW Application::getWindow()

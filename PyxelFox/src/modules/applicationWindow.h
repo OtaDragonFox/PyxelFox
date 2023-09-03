@@ -11,14 +11,17 @@ public:
 
 
 	void recalculateWindow(GLFWwindow* window, int xSize, int ySize);
+	void updateMousePosition(GLFWwindow* window, double xpos, double ypos);
 
 	void processInput();
 
 private:
-	ivec2 m_winRes;
 	GLFWwindow* m_Window;
 	vec4 bgrdCol{1,1,1,1};
 
+	ivec2 m_winRes;
+
+	vec2 m_mouseLoc;
 
 };
 
