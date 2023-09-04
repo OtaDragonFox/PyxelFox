@@ -1,5 +1,6 @@
 #pragma once
 #include "modules/applicationWindow.h"
+#include "modules/Input.h"
 
 
 
@@ -27,17 +28,23 @@ public:
 
 	static applicationWindow* getWindow()
 	{
-		return get().window;
+		return get().m_window;
+	}
+	static applicationInput* getInput()
+	{
+		return get().m_input;
 	}
 
 private:
 	Application() {};
-	float deltaTime = 0.01f;
+	float  m_deltaTime = 0.01f;
 
-	bool running = true;
-	applicationWindow* window;
+	bool  m_running = true;
+	applicationWindow* m_window;
+	applicationInput* m_input;
 };
 
 
 #define CORE Application::get()
 #define WINDOW Application::getWindow()
+#define INPUT Application::getInput()

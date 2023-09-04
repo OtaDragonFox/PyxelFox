@@ -5,7 +5,7 @@ void Application::startUp()
 	registerModules();
 	registerAddons();
 
-	while (running)
+	while (m_running)
 	{
 		applicationTick();
 	}
@@ -18,9 +18,10 @@ void Application::registerModules()
 	//Logger setup
 	//IO setup
 	//Register Window
-	window = new applicationWindow;
-	window->setupWindow(ivec2{640,420});
-
+	m_window = new applicationWindow;
+	m_window->setupWindow(ivec2{640,420});
+	m_input = new applicationInput;
+	m_input->setupInput();
 	//Setup ui modules and open up the application window
 
 
@@ -33,7 +34,7 @@ void Application::registerAddons()
 
 void Application::applicationTick()
 {
-	window->frameTick(deltaTime);
+	m_window->frameTick(m_deltaTime);
 }
 
 Application Application::m_application;
